@@ -15,9 +15,6 @@ jobs:
       - name: Przywitaj sie
         run: echo "Czesc z GitHub Actions!"
 
-      - name: Celowy blad
-        run: cat nie-ma-takiego-pliku.txt
-
       - name: Informacje o maszynie
         run: |
           date
