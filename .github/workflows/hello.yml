@@ -9,6 +9,9 @@ jobs:
   powitanie:
     runs-on: ubuntu-latest
     steps:
+      - name: Pobierz kod
+        uses: actions/checkout@v6
+
       - name: Przywitaj sie
         run: echo "Czesc z GitHub Actions!"
 
