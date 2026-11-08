@@ -7,7 +7,7 @@ env:
   KURS: DevOps
 jobs:
   powitanie:
-    runs-on: ubuntu-latest
+  runs-on: ubuntu-latest
     steps:
       - name: Pobierz kod
         uses: actions/checkout@v6
