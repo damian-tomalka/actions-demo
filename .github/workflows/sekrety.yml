@@ -1,0 +1,26 @@
+name: Sekrety
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sekrety:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Uzyj sekretu i zmiennej
+        env:
+          MOJ_SEKRET: ${{ secrets.MOJ_SEKRET }}
+        run: |
+          echo "Srodowisko: ${{ vars.SRODOWISKO }}"
+          echo "Sekret: $MOJ_SEKRET"
+          echo "Dlugosc sekretu: ${#MOJ_SEKRET} znakow"
+
+      - name: Sprawdz, czy sekret jest ustawiony
+        env:
+          MOJ_SEKRET: ${{ secrets.MOJ_SEKRET }}
+        run: |
+          if [ -z "$MOJ_SEKRET" ]; then
+            echo "Brak sekretu MOJ_SEKRET!"
+            exit 1
+          fi
+          echo "Sekret jest ustawiony."
