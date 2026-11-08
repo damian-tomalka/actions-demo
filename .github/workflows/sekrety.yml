@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Uzyj sekretu i zmiennej
         env:
-          MOJ_SEKRET: ${{ secrets.INNY_SEKRET }}
+          MOJ_SEKRET: ${{ secrets.MOJ_SEKRET }}
         run: |
           echo "Srodowisko: ${{ vars.SRODOWISKO }}"
           echo "Sekret: $MOJ_SEKRET"
@@ -17,7 +17,7 @@ jobs:
 
       - name: Sprawdz, czy sekret jest ustawiony
         env:
-          MOJ_SEKRET: ${{ secrets.INNY_SEKRET }}
+          MOJ_SEKRET: ${{ secrets.MOJ_SEKRET }}
         run: |
           if [ -z "$MOJ_SEKRET" ]; then
             echo "Brak sekretu MOJ_SEKRET!"
